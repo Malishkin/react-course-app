@@ -39,10 +39,24 @@ const CostForm = () => {
     // setUserInput((prevState) => {
     //   return { ...prevState, enteredDate: event.target.value };
     // });
-  };
+    };
+    
+    const submitHandler = (event) =>
+    { 
+        event.preventDefault();
+        const costData = {
+            name: enteredName,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+        console.log(costData);
+        setEnteredName('');
+        setEnteredAmount('');
+        setEnteredDate('');
+    };
 
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-cost__controls">
         <div className="new-cost__control">
           <label>Название</label>
