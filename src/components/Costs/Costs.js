@@ -5,17 +5,13 @@ import CostsFilter from "./CostsFilter";
 import { useState } from "react";
 const Costs = (props) => {
   const [filteredYear, setFilteredYear] = useState("2021");
-  const filterChangeHandler = (selectedYear) => {
+  const yearChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
   return (
     <div>
-      <CostsFilter
-        selected={filteredYear}
-        onChangeFilter={filterChangeHandler}
-      />
-      ;
       <Card className="costs">
+        <CostsFilter year={filteredYear} onChangeYear={yearChangeHandler} />;
         <CostItem
           date={props.costs[0].date}
           description={props.costs[0].description}
