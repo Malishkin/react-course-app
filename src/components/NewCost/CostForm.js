@@ -49,6 +49,7 @@ const CostForm = () => {
       date: new Date(enteredDate),
     };
     console.log(costData);
+    console.log(enteredName);
     setEnteredName("");
     setEnteredAmount("");
     setEnteredDate("");
