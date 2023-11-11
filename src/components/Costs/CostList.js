@@ -3,7 +3,9 @@ import "./CostList.css";
 import CostItem from "./CostItem";
 
 const CostList = (props) => {
-  let costsContent = <p>Нет расходов за выбранный период</p>;
+  let costsContent = (
+    <h2 className="cost-list__fallback">Нет расходов за выбранный период</h2>
+  );
   if (props.costs.length > 0) {
     costsContent = props.costs.map((cost) => (
       <CostItem
